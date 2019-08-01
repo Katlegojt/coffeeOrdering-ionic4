@@ -1,0 +1,32 @@
+
+ion-badge{
+
+    color: #fff;
+    position: absolute;
+    top: 11px;
+    right: 0px;
+    border-radius: 100%;
+    
+}
+.cat-block{
+
+    margin-bottom: 4px;
+}
+
+.cat-banner{
+
+    border-left: 8px soild var(--ion-color-secondary);
+    background: var(--ion-color-light);
+    height: 40px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+
+img {
+    border-radius: 50%;
+    widows: 30%;
+    width: 200px;
+     height:200px;
+     //object-fit: cover;
+  }

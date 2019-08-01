@@ -26,6 +26,7 @@ export class HomePage implements OnInit {
   constructor(private coffeList: CoffeeListService, private router : Router) {
 
     this.items = this.coffeList.getProducts();
+    
 
   }
   ngOnInit() {
@@ -42,15 +43,6 @@ export class HomePage implements OnInit {
     this.router.navigate(['/cart']);
   }
   
-  onSugarAdd(){
-    this.sachets +=1;
-
-
-
-  }
-onSyrupAdd(){
-this.sevings +=1;
-
-}
+  
 
 }

@@ -21,11 +21,15 @@ export class HomePage implements OnInit {
     spaceBetween:10,
     centeredSlides : true,
     slidesPerView: 1.6,
+    autoplay: true,
+    speed: 400,
+    
   };
 
   constructor(private coffeList: CoffeeListService, private router : Router) {
 
     this.items = this.coffeList.getProducts();
+    
     
 
   }

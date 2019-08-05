@@ -20,17 +20,20 @@
     </ion-col>
     </ion-row>
     <ion-slides [options]="sliderConfig">
-    <ion-slide *ngFor="let product of cat.products">
+    <ion-slide *ngFor="let product of cat.products; let i = index">
         <div *ngIf="cat.expanded">
         <ion-card>
                 <ion-card-header>
                     <ion-card-title>
                         <img  src='{{product.src}}'/>
-                        {{product.name}} <br> R{{product.price}}
+
+                        {{product.name}} <br> R {{product.price}}
+                   
+                   
                     </ion-card-title>
                     <ion-card-content>
                       {{product.description}}<br>
-                        <ion-button expand="full"  (click)="addToCart(product)" >Add to cart</ion-button>
+                        <ion-button expand="full" (click)="addToCart(product)" >Add to cart</ion-button>
                     </ion-card-content>
                 </ion-card-header>
         </ion-card> 

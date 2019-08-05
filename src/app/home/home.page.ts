@@ -12,15 +12,14 @@ import { Product } from '../Product';
 export class HomePage implements OnInit {
   private products: Product[];
   
-  sachets=0;
-  sevings=0;
-
+ 
+ 
   items: any[];
   cart: any[];
   sliderConfig={
     spaceBetween:10,
-    centeredSlides : true,
-    slidesPerView: 1.6,
+    centeredSlides:true,
+    slidesPerView:1.6,
     autoplay: true,
     speed: 400,
     
@@ -30,12 +29,13 @@ export class HomePage implements OnInit {
 
     this.items = this.coffeList.getProducts();
     
-    
+ 
 
   }
   ngOnInit() {
     this.cart = this.coffeList.getCart();
     this.items = this.coffeList.getProducts();
+    
  
   }
 
@@ -46,7 +46,6 @@ export class HomePage implements OnInit {
   openCart(){
     this.router.navigate(['/cart']);
   }
-  
   
 
 }

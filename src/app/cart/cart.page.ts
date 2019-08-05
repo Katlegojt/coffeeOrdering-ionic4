@@ -36,7 +36,7 @@ export class CartPage implements OnInit {
  
       this.selecteditems = Object.keys(selected).map(key => selected[key])
      
-      this.total = this.selecteditems.reduce((a, b) => a + (b.count * b.price), 0);
+      this.total = this.selecteditems.reduce((a, b) => a + (b.count * b.price ), 0);
      
     
  
@@ -47,6 +47,7 @@ export class CartPage implements OnInit {
     window.print();
 
    }
+   
  
  
 }

@@ -10,8 +10,9 @@ export class CartPage implements OnInit {
 
   selecteditems= [];
   total: number = 0;
-  price : number;
-  sachet : number;
+ msg: string;
+
+  
   
  
    constructor(private coffeList: CoffeeListService, ) { 
@@ -46,6 +47,13 @@ export class CartPage implements OnInit {
 
     window.print();
 
+   }
+
+   addCream(){
+
+    this.total = this.total+ 11;
+    this.msg = "plus cream"
+    
    }
    
  

@@ -3,6 +3,8 @@ import { CoffeeListService } from '../services/coffee-list.service';
 
 import { Router } from '@angular/router';
 import { Product } from '../Product';
+import { PopoverController } from '@ionic/angular';
+import { PopoverPage } from '../popover/popover/popover.page';
 
 @Component({
   selector: 'app-home',
@@ -12,22 +14,25 @@ import { Product } from '../Product';
 export class HomePage implements OnInit {
   private products: Product[];
   
- 
- 
+ name: string;
+
   items: any[];
   cart: any[];
   sliderConfig={
     spaceBetween:10,
     centeredSlides:true,
     slidesPerView:1.6,
-    autoplay: true,
+    //autoplay: true,
     speed: 400,
     
   };
 
-  constructor(private coffeList: CoffeeListService, private router : Router) {
+  constructor(private coffeList: CoffeeListService, private router : Router, 
+    private popoverController : PopoverController ) {
 
     this.items = this.coffeList.getProducts();
+
+    
     
  
 
@@ -47,5 +52,18 @@ export class HomePage implements OnInit {
     this.router.navigate(['/cart']);
   }
   
+   async viewPopover(ev : Event , product){
+    const popover = await this.popoverController.create({
+      component:  PopoverPage,
+      event: ev,
+      translucent: true,
+      componentProps:{
+        item: this.items
+      }
+    });
+    return await popover.present();
+  }
 
-}
+  }
+
+
